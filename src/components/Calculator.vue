@@ -53,6 +53,8 @@ export default {
             if (this.operatorClicked) {
                 this.current = '';
                 this.operatorClicked = false;
+            } else if (this.current == '0') {
+                this.current = '';
             }
             this.current = `${this.current}${number}`;
         },
@@ -93,11 +95,10 @@ export default {
                 parseFloat(this.current),
                 parseFloat(this.previous)
             )}`;
-            this.previous = null;
         },
 
         drag(e) {
-            var calculator = document.querySelector('.calculator');
+            var calculator = this.$el;
 
             var offsetX = e.pageX - calculator.getBoundingClientRect().x;
             var offsetY = e.pageY - calculator.getBoundingClientRect().y;
@@ -110,7 +111,6 @@ export default {
                 document.body.addEventListener('mouseup', function() {
                     document.body.onmousemove = null;
                 })
-
             };
         }
     }
