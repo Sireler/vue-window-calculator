@@ -3,7 +3,7 @@
 
 ## Installation
 
-``bash
+```bash
 $ npm install
 $ npm run server
-``
+```
