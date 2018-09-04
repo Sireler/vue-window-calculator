@@ -1,6 +1,9 @@
 <template>
   <div class="calculator">
-    <div v-on:mousedown="drag" class="window">Calculator</div>
+    <div v-on:mousedown="drag" class="window">
+        <img src="favicon.ico" alt="icon">
+        Calculator
+    </div>
     <div class="display">{{current || '0'}}</div>
     <div @click="clear" class="btn operator">C</div>
     <div @click="sign" class="btn operator">+/-</div>
